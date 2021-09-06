@@ -12,3 +12,7 @@ LDx -> 0x31xxxxxx -> Loads value from address to x
 STx -> 0x32xxxxxx -> Store value from x to address
 ADD -> 0x13xxxxxx -> Adds value from x to Accumulator
 SUB -> 0x14xxxxxx -> Subtracts value from x to Accumulator
+MUL -> 0x15xxxxxx -> Multiplies value from x to Accumulator
+DIV -> 0x16xxxxxx -> Divides value from x to Accumulator
+JMP -> 0x37zzzzzz -> Jump to address in memory
+JMZ -> 0x38xxxxxx -> Jump to address in memory if x is 0
