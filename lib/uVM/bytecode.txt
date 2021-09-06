@@ -1,0 +1,14 @@
+This describes how the byte code looks and what it does
+
+A -> How many words in memory does the command use
+B -> What command is it
+C-H -> Command specific
+
+x -> Internal machine address (x can be a register but can also be a uVM call)
+
+         ABCDEFGH
+NOP -> 0x10zzzzzz -> Does nothing :)
+LDx -> 0x31xxxxxx -> Loads value from address to x
+STx -> 0x32xxxxxx -> Store value from x to address
+ADD -> 0x13xxxxxx -> Adds value from x to Accumulator
+SUB -> 0x14xxxxxx -> Subtracts value from x to Accumulator
