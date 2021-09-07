@@ -13,7 +13,8 @@ private:
     // REGISTERS
 
     double_word _pc = 0; // Program counter
-    double_word _mar = 0; // Memory address register
+
+    word _current_op_code = 0;
 
     double_word _sp; // Stack pointer
 
@@ -24,8 +25,8 @@ private:
 
     // INTERFACES
 
-    uMMU _mmu(); // Memory managment unit
-    uPIA _pia(); // Peripheral interface adapter
+    uMMU _mmu; // Memory managment unit
+    uPIA _pia; // Peripheral interface adapter
 
 public:
     uVM();
