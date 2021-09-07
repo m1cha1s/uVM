@@ -1,6 +1,9 @@
 #ifndef U_VM_H
 #define U_VM_H
 
+#include "uMacros.hpp"
+
+#include "uMMU.hpp"
 #include "uPIA.hpp"
 
 class uVM
@@ -9,26 +12,23 @@ private:
 
     // REGISTERS
 
-    unsigned long long _mar = 0; // Memory address register
+    double_word _pc = 0; // Program counter
+    double_word _mar = 0; // Memory address register
 
-    unsigned long long _sp; // Stack pointer
+    double_word _sp; // Stack pointer
 
-    unsigned long long _A; // General purpose register A (Accumulator)
-    unsigned long long _B; // General purpose register B
-    unsigned long long _C; // General purpose register C
-    unsigned long long _D; // General purpose register D
+    word _A; // General purpose register A (Accumulator)
+    word _B; // General purpose register B
+    word _C; // General purpose register C
+    word _D; // General purpose register D
 
     // INTERFACES
 
-    uPIA _pia;
-
-    // MEMORIES
-
-    unsigned long *_mem; // Memory
-
+    uMMU _mmu(); // Memory managment unit
+    uPIA _pia(); // Peripheral interface adapter
 
 public:
-    uVM(unsigned long *mem, unsigned long long depth);
+    uVM();
     ~uVM();
 
     int run();

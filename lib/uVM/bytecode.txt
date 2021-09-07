@@ -14,5 +14,12 @@ ADD -> 0x13xxxxxx -> Adds value from x to Accumulator
 SUB -> 0x14xxxxxx -> Subtracts value from x to Accumulator
 MUL -> 0x15xxxxxx -> Multiplies value from x to Accumulator
 DIV -> 0x16xxxxxx -> Divides value from x to Accumulator
-JMP -> 0x37zzzzzz -> Jump to address in memory
-JMZ -> 0x38xxxxxx -> Jump to address in memory if x is 0
+SHL -> 0x17zzzzzz -> Shifts value in Accumulator to the left
+SHR -> 0x18zzzzzz -> Shifts value in Accumulator to the right
+AND -> 0x19xxxxxx -> AND Accumulator and x together
+OR  -> 0x1Axxxxxx -> OR Accumulator and x together
+NOT -> 0x1Bxxxxxx -> NOT x
+XOR -> 0x1Cxxxxxx -> XOR Accumulator and x together
+MOV -> 0x5Dzzzzzz -> MOV data from address A to address B
+JMP -> 0x3Ezzzzzz -> Jump to address in memory
+JMZ -> 0x3Fxxxxxx -> Jump to address in memory if x is 0
